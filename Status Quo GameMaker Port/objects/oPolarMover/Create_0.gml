@@ -3,7 +3,7 @@
 		 * @param	distance	Distance to move (use speed * FP.elapsed for variable time)
 		 * @param	direction	Direction to move, in degrees (0 is to the right, ccw)
 		 */
-		function move(distance, direction)
+		function move (distance, direction)
 		{
 			// Need to convert degrees to radians for sin/cos functions, hence multiplying by Math.PI/180
 			x += distance * cos(direction * pi/180);

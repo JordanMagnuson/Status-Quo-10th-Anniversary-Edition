@@ -2,8 +2,7 @@
   "resources": [
     {"id":{"name":"sprPlayer","path":"sprites/sprPlayer/sprPlayer.yy",},"order":0,},
     {"id":{"name":"oPolarMover","path":"objects/oPolarMover/oPolarMover.yy",},"order":1,},
-    {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":2,},
-    {"id":{"name":"oMyWorldController","path":"objects/oMyWorldController/oMyWorldController.yy",},"order":0,},
+    {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":4,},
     {"id":{"name":"rmMyWorld","path":"rooms/rmMyWorld/rmMyWorld.yy",},"order":0,},
   ],
   "Options": [

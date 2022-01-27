@@ -17,7 +17,7 @@ package
 	public class Player extends PolarMover
 	{
 		/**
-		 * Constants.
+		 * Constants.	Block done, is macros best way?
 		 */
 		public static const RADIUS_ORIG:Number = 8;
 		public const MAX_SPEED:Number = 60;
@@ -29,22 +29,22 @@ package
 		public const ENEMY_MOVE_DIST:Number = 20;	// Distance player moves when hits enemy.
 		
 		/**
-		 * Movement properties.
+		 * Movement properties.	Block done
 		 */
 		public var g:Number = 0;
 		public var accel:Number = 0;
-		public var accelCurrent:Number = 0;
+		public var accelCurrent:Number = 0;  
 		public var speed:Number = 0;		
 		
 		/**
-		 * Breathing
+		 * Breathing	Block done
 		 */
 		public static var breatheAlarm:Alarm;
 		public static var breathe:NumTween;
 		public static var breathing:Boolean = true;		
 		
 		/**
-		 * Other properties.                  
+		 * Other properties.     Block implemented do we need to make radius variable how to overwrite properly             
 		 */
 		public static var color:uint = Colors.WHITE;	// Color changes from white to black depending on where player is in LightTail.		
 		public static var radius:Number = RADIUS_ORIG;
@@ -53,7 +53,7 @@ package
 		public static var frozen:Boolean = true; 	// Whether the player is totally frozen (no grav, etc.)
 		
 		/**
-		 * Image.
+		 * Image.	needs work
 		 */
 		public var image:Image = Image.createCircle(9, Colors.WHITE);
 		[Embed(source = '../assets/arrow.png')] private const ARROW:Class;
@@ -90,7 +90,7 @@ package
 			arrowImage.y = -arrowImage.originY;		
 			//setHitbox(arrowImage.width, arrowImage.height, arrowImage.originX, arrowImage.originY);			
 			
-			// Define input
+			// Define input     //done with input block
 			Input.define("R", Key.RIGHT);
 			Input.define("L", Key.LEFT);		
 			Input.define("RESIST", Key.SPACE);
