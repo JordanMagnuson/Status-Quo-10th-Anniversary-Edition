@@ -4,9 +4,10 @@
 	global.accel = 0;
 	global.accelCurrent = 0;
 	global.playerSpeed = 0;	
-	global.inDarkness = false;
+	global.inDarkness = true;
+	global.frozen = true;
 	x =  room_width / 2;
-	y =  (room_height / 2) +80;
+	y =  (room_height / 2) + 175;
 	
 	canMove = true;
 	
@@ -14,13 +15,13 @@
 	
 		function accelMovement()
 		{
-		//	if (!frozen)     //add back in when beginning of game is set up
-		//	{
+			if (!global.frozen)     
+			{
 				gravityit();
 			if (canMove) {
 					acceleration();}
-				move(global.playerSpeed *.1, pointDirection(oPlayer.x, oPlayer.y, room_width / 2, room_height / 2));				
-			
+				move(global.playerSpeed *.02, pointDirection(oPlayer.x, oPlayer.y, room_width / 2, room_height / 2));				
+			}
 		}
 		
 		function acceleration()
@@ -81,3 +82,36 @@
 				global.inDarkness = !global.inDarkness;
 			return global.inDarkness;
 		}
+		
+		
+		function checkSafeZone()
+		{
+			//if (distanceToPoint(FP.halfWidth, FP.halfHeight) < SafeZone.innerRadius && canMove)
+			if (y < ((room_height / 2) + 123))
+			{
+			//	Globals.timeAlive = GameWorld.timer.timePassed;
+			//	Globals.modeOfDeath = 'absorbed';
+			
+	//			SoundController.music.stop();
+	//			SoundController.soundGlitch.play();
+	//			canMove = false;
+				audio_stop_sound(music);
+				audio_play_sound(glitch,1,false);
+				instance_destroy();
+			}
+		//	else if (distanceToPoint(FP.halfWidth, FP.halfHeight) > SafeZone.outerRadius)
+		else if (y >  ((room_height / 2) + 221))
+			{
+			//	Globals.timeAlive = GameWorld.timer.timePassed;
+			//	Globals.modeOfDeath = 'destroyed';
+			//	if (!China.shootingLazer)
+			//	{
+			//		China.shootLazer();
+					audio_stop_sound(music);
+					audio_play_sound(glitch,1,false);
+					instance_destroy();
+			//		frozen = true;
+				}
+				//canMove = false;
+			}			
+		
