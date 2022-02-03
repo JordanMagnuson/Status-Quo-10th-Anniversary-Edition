@@ -4,9 +4,10 @@
 	global.accel = 0;
 	global.accelCurrent = 0;
 	global.playerSpeed = 0;	
-	global.inDarkness = false;
+	global.inDarkness = true;
+	global.frozen = true;
 	x =  room_width / 2;
-	y =  (room_height / 2) +80;
+	y =  (room_height / 2) + 175;
 	
 	canMove = true;
 	
@@ -14,13 +15,13 @@
 	
 		function accelMovement()
 		{
-		//	if (!frozen)     //add back in when beginning of game is set up
-		//	{
+			if (!global.frozen)     
+			{
 				gravityit();
 			if (canMove) {
 					acceleration();}
-				move(global.playerSpeed *.1, pointDirection(oPlayer.x, oPlayer.y, room_width / 2, room_height / 2));				
-			
+				move(global.playerSpeed *(delta_time / 1000000), pointDirection(oPlayer.x, oPlayer.y, room_width / 2, room_height / 2));				
+			}
 		}
 		
 		function acceleration()
@@ -37,7 +38,7 @@
 			}
 			if (global.accel != 0)
 			{
-				global.playerSpeed += global.accel *.1;
+				global.playerSpeed += global.accel * (delta_time / 1000000);
 				if (global.playerSpeed > 60) 
 					global.playerSpeed = 60;
 				if (global.playerSpeed < -60)
@@ -66,7 +67,7 @@
 				global.g *= -1;
 			}
 			
-			global.playerSpeed += global.g *.1;
+			global.playerSpeed += global.g * (delta_time / 1000000);
 			if (global.playerSpeed > 60) {  //can fix using the macros instead of number?
 				global.playerSpeed = 60;
 			}
@@ -81,3 +82,34 @@
 				global.inDarkness = !global.inDarkness;
 			return global.inDarkness;
 		}
+		
+		
+		function checkSafeZone()
+		{
+			//if (distanceToPoint(FP.halfWidth, FP.halfHeight) < SafeZone.innerRadius && canMove)
+			if (y < ((room_height / 2) + 123))
+			{
+			//	Globals.timeAlive = GameWorld.timer.timePassed;
+			//	Globals.modeOfDeath = 'absorbed';
+			
+				canMove = false;
+				audio_stop_sound(music);
+				audio_play_sound(glitch,1,false);
+				instance_destroy();
+			}
+		//	else if (distanceToPoint(FP.halfWidth, FP.halfHeight) > SafeZone.outerRadius)
+		else if (y >  ((room_height / 2) + 221))
+			{
+			//	Globals.timeAlive = GameWorld.timer.timePassed;
+			//	Globals.modeOfDeath = 'destroyed';
+			//	if (!China.shootingLazer)
+			//	{
+			//		China.shootLazer();
+					audio_stop_sound(music);
+					audio_play_sound(glitch,1,false);
+					instance_destroy();
+					frozen = true;
+				}
+				//canMove = false;
+			}			
+		
