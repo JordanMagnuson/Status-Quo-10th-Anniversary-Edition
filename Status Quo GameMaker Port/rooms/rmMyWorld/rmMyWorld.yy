@@ -14,6 +14,7 @@
   ],
   "layers": [
     {"instances":[
+        {"properties":[],"isDnd":false,"objectId":{"name":"oLightTail","path":"objects/oLightTail/oLightTail.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":352.0,"y":288.0,"resourceVersion":"1.0","name":"inst_2FA7630E","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oPolarMover","path":"objects/oPolarMover/oPolarMover.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":32.0,"resourceVersion":"1.0","name":"inst_7513903D","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oSafeZone","path":"objects/oSafeZone/oSafeZone.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":0.0,"resourceVersion":"1.0","name":"inst_31F64176","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":320.0,"y":416.0,"resourceVersion":"1.0","name":"inst_7792C6BF","tags":[],"resourceType":"GMRInstance",},
@@ -29,6 +30,7 @@
     {"name":"inst_7792C6BF","path":"rooms/rmMyWorld/rmMyWorld.yy",},
     {"name":"inst_31F64176","path":"rooms/rmMyWorld/rmMyWorld.yy",},
     {"name":"inst_831DAE0","path":"rooms/rmMyWorld/rmMyWorld.yy",},
+    {"name":"inst_2FA7630E","path":"rooms/rmMyWorld/rmMyWorld.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

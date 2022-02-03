@@ -78,16 +78,20 @@
 		
 		function inDarkness()
 		{
-			if (switchInDarkness)
-				global.inDarkness = !global.inDarkness;
-			return global.inDarkness;
+			if (point_distance(x,y,(room_width / 2),(room_height / 2)) < global.INNER_RADIUS_ORIG)
+				return true;
+			else if (point_distance(x,y,(room_width / 2),(room_height / 2)) > global.OUTER_RADIUS_ORIG)
+				return false;
+			else if (oLightTail.image_angle < 180)
+				return true;
+			else
+				return false;
 		}
 		
 		
 		function checkSafeZone()
 		{
-			//if (distanceToPoint(FP.halfWidth, FP.halfHeight) < SafeZone.innerRadius && canMove)
-			if (y < ((room_height / 2) + 123))
+			if (point_distance(x,y,(room_width / 2),(room_height / 2)) < global.INNER_RADIUS_ORIG)
 			{
 			//	Globals.timeAlive = GameWorld.timer.timePassed;
 			//	Globals.modeOfDeath = 'absorbed';
@@ -97,8 +101,7 @@
 				audio_play_sound(glitch,1,false);
 				instance_destroy();
 			}
-		//	else if (distanceToPoint(FP.halfWidth, FP.halfHeight) > SafeZone.outerRadius)
-		else if (y >  ((room_height / 2) + 221))
+		else if(point_distance(x,y,(room_width / 2),(room_height / 2)) > global.OUTER_RADIUS_ORIG)
 			{
 			//	Globals.timeAlive = GameWorld.timer.timePassed;
 			//	Globals.modeOfDeath = 'destroyed';
@@ -113,3 +116,21 @@
 				//canMove = false;
 			}			
 		
+		function restoreMovement()
+		{
+			canMove = true;
+		}
+		
+		function updateColor()
+		{
+			if (point_distance(x,y,(room_width / 2),(room_height / 2)) > global.OUTER_RADIUS_ORIG)
+			{
+				draw_set_color(c_white);
+			}
+			else if (inDarkness())
+			{
+				draw_set_color(c_white);
+			}
+			else 
+				draw_set_color(c_black);
+		}
