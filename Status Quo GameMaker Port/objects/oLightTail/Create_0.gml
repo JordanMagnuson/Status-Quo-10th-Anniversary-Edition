@@ -2,9 +2,9 @@
  global.MIN_SPEED = 20;
  global.SPEED_CHANGE_RATE = 2.5;
  tailSpeed = global.MIN_SPEED;
- angle = 0;
+ angle = 90;
  rotations = 0;
- 
+ image_angle = 90;
  x =  room_width / 2;
  y =  room_height / 2;
  

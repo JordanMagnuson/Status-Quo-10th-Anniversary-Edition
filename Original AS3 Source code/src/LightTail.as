@@ -1,5 +1,5 @@
 package  
-{
+{  //done exept for enemies and breathing related coed
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.FP;

@@ -9,6 +9,7 @@
 	x =  room_width / 2;
 	y =  (room_height / 2) + 175;
 	
+	ENEMY_MOVE_DIST = 20;
 	canMove = true;
 	
 	
@@ -115,22 +116,22 @@
 				}
 				//canMove = false;
 			}			
-		
+				
 		function restoreMovement()
 		{
 			canMove = true;
 		}
 		
-		function updateColor()
-		{
-			if (point_distance(x,y,(room_width / 2),(room_height / 2)) > global.OUTER_RADIUS_ORIG)
-			{
-				draw_set_color(c_white);
-			}
-			else if (inDarkness())
-			{
-				draw_set_color(c_white);
-			}
-			else 
-				draw_set_color(c_black);
-		}
+//		function updateColor()
+//		{
+//			if (point_distance(x,y,(room_width / 2),(room_height / 2)) > global.OUTER_RADIUS_ORIG)
+//			{
+//				draw_set_color(c_white);
+//			}
+//			else if (inDarkness())
+//			{
+//				draw_set_color(c_white);
+//			}
+//			else 
+//				draw_set_color(c_black);
+//		}
