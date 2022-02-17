@@ -6,7 +6,7 @@ LIGHT_COLOR = c_white;
 EnemyRotations = 0;
 LastAngle = 0; 
 rotations = 0;
-
+image_alpha = 0;
 
  function speedMatchLightTail()
 		{
