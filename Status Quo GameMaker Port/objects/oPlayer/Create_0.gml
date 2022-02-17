@@ -114,8 +114,6 @@
 				if (!oChina.shootingLazer)
 				{
 					oChina.shootLazer();
-					audio_stop_sound(music);
-					audio_play_sound(glitch,1,false);
 					frozen = true;
 				}
 				canMove = false;
