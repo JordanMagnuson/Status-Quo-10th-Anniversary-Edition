@@ -16,7 +16,8 @@ package
 		public const START_THE_ACTION_TIME:Number = 3;
 		public const RELEASE_ENEMIES_TIME:Number = 42.5 + START_THE_ACTION_TIME;	// 42.5
 		public const PAUSE_CHINA_BREATHING_TIME:Number = 99 + START_THE_ACTION_TIME; //99
-		public const START_ALL_BREATHING_TIME:Number = 106.9+ START_THE_ACTION_TIME;  //107		
+		//public const START_ALL_BREATHING_TIME:Number = 106.9+ START_THE_ACTION_TIME;  //107		
+		public const START_ALL_BREATHING_TIME:Number = 15 + START_THE_ACTION_TIME;
 		
 		public const START_THE_ACTION_ALARM:Alarm = new Alarm(START_THE_ACTION_TIME, startTheAction);
 		public const RELEASE_ENEMIES_ALARM:Alarm = new Alarm(RELEASE_ENEMIES_TIME, releaseEnemy);

@@ -1,13 +1,27 @@
+radius = RADIUS_ORIG * breathValue;
+if (RESIST) 
+{			
+	if (inDarkness())
+	{
+		draw_set_color(c_white);
 
-if (point_distance(x,y,(room_width / 2),(room_height / 2)) > global.OUTER_RADIUS_ORIG)
-			{
-				draw_set_color(c_white);
-			}
-			else if (inDarkness())
-			{
-				draw_set_color(c_white);
-			}
-			else 
-				draw_set_color(c_black);
-draw_circle(x, y, 9, false);
+		//draw_sprite_ext(3, image_index, x+1, y + 11,1,1,180,c_white,1);
+		
+		draw_arrow(x, y + (radius + 2), x, y + (radius + 14), 7);
+	}
+	else {
+		draw_set_color(c_black);
+		//draw_sprite_ext(3, image_index, x, y - 11,1,1,0,c_black,1);
+		draw_arrow(x, y - (radius + 2), x, y - (radius + 14), 7);
+	}
+}	
+
+if (inDarkness())
+	{
+		draw_set_color(c_white);
+	}
+	else {
+		draw_set_color(c_black);
+	}
+draw_circle(x, y, radius, false);
 draw_set_color(c_white);

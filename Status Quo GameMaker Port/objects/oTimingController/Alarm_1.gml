@@ -1,0 +1,1 @@
+oEnemyController.releaseEnemy();	

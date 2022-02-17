@@ -29,10 +29,12 @@
 			{
 				rotations++;
 				changeRotationSpeed( tailSpeed + (global.SPEED_CHANGE_RATE / rotations));
-				//GameWorld.enemyController.changeReleaseRate(EnemyController.releaseRate - (EnemyController.RELEASE_RATE_CHANGE / rotations));
+				oEnemyController.changeReleaseRate(oEnemyController.releaseRate - (oEnemyController.RELEASE_RATE_CHANGE / rotations));
 				angle = angle - 360;
 			}
 			image_angle = angle;		
-		//	if (SafeZone.breathing)
-		//		image.scale = SafeZone.breathe.value;
+			if (oSafeZone.breathing){
+				image_xscale = oSafeZone.breathValue;
+				image_yscale = oSafeZone.breathValue;
+			}
 		}

@@ -9,10 +9,14 @@
 	x =  room_width / 2;
 	y =  (room_height / 2) + 175;
 	
+	RADIUS_ORIG = 8;
 	ENEMY_MOVE_DIST = 20;
 	canMove = true;
-	
-	
+	radius = 9;
+	breathing = true;
+	breathValue = 1;
+	breathingIn = true;
+	breathingOut = false;
 	
 		function accelMovement()
 		{
@@ -79,9 +83,9 @@
 		
 		function inDarkness()
 		{
-			if (point_distance(x,y,(room_width / 2),(room_height / 2)) < global.INNER_RADIUS_ORIG)
+			if (point_distance(x,y,(room_width / 2),(room_height / 2)) < oSafeZone.innerRadius)
 				return true;
-			else if (point_distance(x,y,(room_width / 2),(room_height / 2)) > global.OUTER_RADIUS_ORIG)
+			else if (point_distance(x,y,(room_width / 2),(room_height / 2)) > oSafeZone.outerRadius)
 				return false;
 			else if (oLightTail.image_angle < 180)
 				return true;
@@ -92,7 +96,7 @@
 		
 		function checkSafeZone()
 		{
-			if (point_distance(x,y,(room_width / 2),(room_height / 2)) < global.INNER_RADIUS_ORIG)
+			if (point_distance(x,y,(room_width / 2),(room_height / 2)) < oSafeZone.innerRadius)
 			{
 			//	Globals.timeAlive = GameWorld.timer.timePassed;
 			//	Globals.modeOfDeath = 'absorbed';
@@ -102,7 +106,7 @@
 				audio_play_sound(glitch,1,false);
 				instance_destroy();
 			}
-		else if(point_distance(x,y,(room_width / 2),(room_height / 2)) > global.OUTER_RADIUS_ORIG)
+		else if(point_distance(x,y,(room_width / 2),(room_height / 2)) > oSafeZone.outerRadius)
 			{
 			//	Globals.timeAlive = GameWorld.timer.timePassed;
 			//	Globals.modeOfDeath = 'destroyed';
@@ -122,16 +126,20 @@
 			canMove = true;
 		}
 		
-//		function updateColor()
-//		{
-//			if (point_distance(x,y,(room_width / 2),(room_height / 2)) > global.OUTER_RADIUS_ORIG)
-//			{
-//				draw_set_color(c_white);
-//			}
-//			else if (inDarkness())
-//			{
-//				draw_set_color(c_white);
-//			}
-//			else 
-//				draw_set_color(c_black);
-//		}
+		function breath()
+		{
+			 if (breathingIn){
+				breathValue += (.15/(room_speed*1));
+				if (breathValue > 1.15){
+					breathingIn = false;
+					breathingOut = true;
+				}
+			 }
+			else if (breathingOut){
+				breathValue -= (.15/(room_speed*1));
+				if (breathValue < 1){
+					breathingIn = true;
+					breathingOut = false;
+				}
+			}
+		}

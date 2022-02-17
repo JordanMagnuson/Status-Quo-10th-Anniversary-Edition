@@ -1,1 +1,2 @@
 continueOrbit(speedMatchLightTail());
+updateRotations();

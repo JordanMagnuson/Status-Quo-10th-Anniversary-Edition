@@ -5,7 +5,7 @@ LIGHT_COLOR = c_white;
 
 EnemyRotations = 0;
 LastAngle = 0; 
-
+rotations = 0;
 
 
  function speedMatchLightTail()
@@ -13,17 +13,18 @@ LastAngle = 0;
 			return (((oLightTail.tailSpeed * pi / 180) * (point_distance(x,y,centerX,centerY)))/ room_speed);
 		} 
 
-//	    function updateRotations()
-//		{
-//			currentAngle = pointDirection(centerX, centerY, x, y);
-//			if (currentAngle < 0)
-//				currentAngle += 360;
-//			if (currentAngle < lastAngle && currentAngle > EnemyController.releaseAngle)
-//			{
-//				rotations++;
-//			}
-//			lastAngle = currentAngle;			
-//		}
+function updateRotations()
+		{
+			currentAngle = pointDirection(centerX, centerY, x, y);
+			if (currentAngle < 0)
+				currentAngle += 360;
+			if (currentAngle < LastAngle && currentAngle > oEnemyController.releaseAngle)
+			{
+				//rotations++;
+				destroy();
+			}
+			LastAngle = currentAngle;			
+		}
 
 function inDarkness()
 		{
@@ -35,3 +36,8 @@ function inDarkness()
 			else
 				return false;
 		}	
+		
+function destroy()
+		{
+			instance_destroy();			
+		}
