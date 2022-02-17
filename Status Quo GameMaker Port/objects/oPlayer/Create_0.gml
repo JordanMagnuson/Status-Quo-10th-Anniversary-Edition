@@ -9,9 +9,14 @@
 	x =  room_width / 2;
 	y =  (room_height / 2) + 175;
 	
+	RADIUS_ORIG = 8;
+	ENEMY_MOVE_DIST = 20;
 	canMove = true;
-	
-	
+	radius = 9;
+	breathing = true;
+	breathValue = 1;
+	breathingIn = true;
+	breathingOut = false;
 	
 		function accelMovement()
 		{
@@ -78,16 +83,20 @@
 		
 		function inDarkness()
 		{
-			if (switchInDarkness)
-				global.inDarkness = !global.inDarkness;
-			return global.inDarkness;
+			if (point_distance(x,y,(room_width / 2),(room_height / 2)) < oSafeZone.innerRadius)
+				return true;
+			else if (point_distance(x,y,(room_width / 2),(room_height / 2)) > oSafeZone.outerRadius)
+				return false;
+			else if (oLightTail.image_angle < 180)
+				return true;
+			else
+				return false;
 		}
 		
 		
 		function checkSafeZone()
 		{
-			//if (distanceToPoint(FP.halfWidth, FP.halfHeight) < SafeZone.innerRadius && canMove)
-			if (y < ((room_height / 2) + 123))
+			if (point_distance(x,y,(room_width / 2),(room_height / 2)) < oSafeZone.innerRadius)
 			{
 			//	Globals.timeAlive = GameWorld.timer.timePassed;
 			//	Globals.modeOfDeath = 'absorbed';
@@ -97,8 +106,7 @@
 				audio_play_sound(glitch,1,false);
 				instance_destroy();
 			}
-		//	else if (distanceToPoint(FP.halfWidth, FP.halfHeight) > SafeZone.outerRadius)
-		else if (y >  ((room_height / 2) + 221))
+		else if(point_distance(x,y,(room_width / 2),(room_height / 2)) > oSafeZone.outerRadius)
 			{
 			//	Globals.timeAlive = GameWorld.timer.timePassed;
 			//	Globals.modeOfDeath = 'destroyed';
@@ -112,4 +120,26 @@
 				}
 				//canMove = false;
 			}			
+				
+		function restoreMovement()
+		{
+			canMove = true;
+		}
 		
+		function breath()
+		{
+			 if (breathingIn){
+				breathValue += (.15/(room_speed*1));
+				if (breathValue > 1.15){
+					breathingIn = false;
+					breathingOut = true;
+				}
+			 }
+			else if (breathingOut){
+				breathValue -= (.15/(room_speed*1));
+				if (breathValue < 1){
+					breathingIn = true;
+					breathingOut = false;
+				}
+			}
+		}

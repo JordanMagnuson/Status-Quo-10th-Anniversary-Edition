@@ -1,13 +1,22 @@
 {
   "resources": [
+    {"id":{"name":"sLightTail","path":"sprites/sLightTail/sLightTail.yy",},"order":0,},
     {"id":{"name":"music","path":"sounds/music/music.yy",},"order":0,},
+    {"id":{"name":"oEnemy","path":"objects/oEnemy/oEnemy.yy",},"order":9,},
     {"id":{"name":"Lazer","path":"sounds/Lazer/Lazer.yy",},"order":2,},
+    {"id":{"name":"oOrbiter","path":"objects/oOrbiter/oOrbiter.yy",},"order":8,},
     {"id":{"name":"oPolarMover","path":"objects/oPolarMover/oPolarMover.yy",},"order":1,},
     {"id":{"name":"oSafeZone","path":"objects/oSafeZone/oSafeZone.yy",},"order":5,},
+    {"id":{"name":"oTimingController","path":"objects/oTimingController/oTimingController.yy",},"order":11,},
+    {"id":{"name":"oEnemyController","path":"objects/oEnemyController/oEnemyController.yy",},"order":10,},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":4,},
     {"id":{"name":"glitch","path":"sounds/glitch/glitch.yy",},"order":3,},
     {"id":{"name":"hit","path":"sounds/hit/hit.yy",},"order":1,},
+    {"id":{"name":"sEnemyCollision","path":"sprites/sEnemyCollision/sEnemyCollision.yy",},"order":2,},
     {"id":{"name":"oSoundController","path":"objects/oSoundController/oSoundController.yy",},"order":6,},
+    {"id":{"name":"sPlayerCollision","path":"sprites/sPlayerCollision/sPlayerCollision.yy",},"order":1,},
+    {"id":{"name":"sArrow","path":"sprites/sArrow/sArrow.yy",},"order":3,},
+    {"id":{"name":"oLightTail","path":"objects/oLightTail/oLightTail.yy",},"order":7,},
     {"id":{"name":"rmMyWorld","path":"rooms/rmMyWorld/rmMyWorld.yy",},"order":0,},
   ],
   "Options": [
