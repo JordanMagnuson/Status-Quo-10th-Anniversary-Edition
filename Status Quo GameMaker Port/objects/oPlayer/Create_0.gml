@@ -1,5 +1,7 @@
 	event_inherited();
 	
+	global.modeOfDeath =""; 
+	
 	global.g = 0;
 	global.accel = 0;
 	global.accelCurrent = 0;
@@ -96,30 +98,29 @@
 		
 		function checkSafeZone()
 		{
-			if (point_distance(x,y,(room_width / 2),(room_height / 2)) < oSafeZone.innerRadius)
+			if (point_distance(x,y,(room_width / 2),(room_height / 2)) < oSafeZone.innerRadius && canMove)
 			{
 			//	Globals.timeAlive = GameWorld.timer.timePassed;
-			//	Globals.modeOfDeath = 'absorbed';
+				global.modeOfDeath = "absorbed";
 			
 				canMove = false;
 				audio_stop_sound(music);
 				audio_play_sound(glitch,1,false);
-				instance_destroy();
 			}
 		else if(point_distance(x,y,(room_width / 2),(room_height / 2)) > oSafeZone.outerRadius)
 			{
 			//	Globals.timeAlive = GameWorld.timer.timePassed;
-			//	Globals.modeOfDeath = 'destroyed';
-			//	if (!China.shootingLazer)
-			//	{
-			//		China.shootLazer();
+				global.modeOfDeath = "destroyed";
+				if (!oChina.shootingLazer)
+				{
+					oChina.shootLazer();
 					audio_stop_sound(music);
 					audio_play_sound(glitch,1,false);
-					instance_destroy();
 					frozen = true;
 				}
-				//canMove = false;
-			}			
+				canMove = false;
+			}	
+		}
 				
 		function restoreMovement()
 		{
@@ -143,3 +144,4 @@
 				}
 			}
 		}
+			

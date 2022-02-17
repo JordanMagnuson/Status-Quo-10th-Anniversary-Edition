@@ -1,3 +1,3 @@
-//China.breathing = true;
+oChina.breathing = true;
 oSafeZone.startBreathing();
 global.moving = true;

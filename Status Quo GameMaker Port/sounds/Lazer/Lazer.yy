@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "Lazer.mp3",
+  "soundFile": "lazer.mp3",
   "duration": 2.756,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Lazer",
+  "name": "lazer",
   "tags": [],
   "resourceType": "GMSound",
 }

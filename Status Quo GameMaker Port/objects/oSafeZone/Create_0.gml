@@ -13,7 +13,6 @@ breathingOut = false;
 
 function startBreathing(){
 breathing = true;
-
 }
 
 function breath()
