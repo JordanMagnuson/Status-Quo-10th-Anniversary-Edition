@@ -1,3 +1,4 @@
+
 global.secondsAlive = 0
 timeAlive = 0;
 
