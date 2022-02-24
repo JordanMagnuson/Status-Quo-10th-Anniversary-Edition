@@ -23,6 +23,6 @@ if (inDarkness())
 	else {
 		draw_set_color(c_black);
 	}
-	//draw_set_circle_precision(64);
+	draw_set_circle_precision(64);
 draw_circle(x, y, radius, false);
 draw_set_color(c_white);
