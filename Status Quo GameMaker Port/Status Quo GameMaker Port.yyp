@@ -5,6 +5,7 @@
     {"id":{"name":"music","path":"sounds/music/music.yy",},"order":0,},
     {"id":{"name":"oEnemy","path":"objects/oEnemy/oEnemy.yy",},"order":9,},
     {"id":{"name":"menuFont","path":"fonts/menuFont/menuFont.yy",},"order":0,},
+    {"id":{"name":"oGlobals","path":"objects/oGlobals/oGlobals.yy",},"order":20,},
     {"id":{"name":"oOrbiter","path":"objects/oOrbiter/oOrbiter.yy",},"order":8,},
     {"id":{"name":"oPolarMover","path":"objects/oPolarMover/oPolarMover.yy",},"order":1,},
     {"id":{"name":"oSafeZone","path":"objects/oSafeZone/oSafeZone.yy",},"order":5,},
