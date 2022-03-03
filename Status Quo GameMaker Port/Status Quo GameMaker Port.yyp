@@ -5,6 +5,7 @@
     {"id":{"name":"music","path":"sounds/music/music.yy",},"order":0,},
     {"id":{"name":"oEnemy","path":"objects/oEnemy/oEnemy.yy",},"order":9,},
     {"id":{"name":"menuFont","path":"fonts/menuFont/menuFont.yy",},"order":0,},
+    {"id":{"name":"oGlobals","path":"objects/oGlobals/oGlobals.yy",},"order":20,},
     {"id":{"name":"oOrbiter","path":"objects/oOrbiter/oOrbiter.yy",},"order":8,},
     {"id":{"name":"oPolarMover","path":"objects/oPolarMover/oPolarMover.yy",},"order":1,},
     {"id":{"name":"oSafeZone","path":"objects/oSafeZone/oSafeZone.yy",},"order":5,},
@@ -47,10 +48,10 @@
     {"name":"Windows","path":"options/windows/options_windows.yy",},
     {"name":"Windows UWP","path":"options/windowsuap/options_windowsuap.yy",},
     {"name":"operagx","path":"options/operagx/options_operagx.yy",},
+    {"name":"Amazon Fire","path":"options/amazonfire/options_amazonfire.yy",},
   ],
   "isDnDProject": false,
   "isEcma": false,
-  "tutorialPath": "",
   "configs": {
     "name": "Default",
     "children": [],
@@ -84,7 +85,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.6.595",
+    "IDEVersion": "2022.1.1.610",
   },
   "resourceVersion": "1.4",
   "name": "Status Quo GameMaker Port",
