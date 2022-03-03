@@ -1,3 +1,2 @@
-if (global.moving){
+if (global.moving)
 	rotate();
-}

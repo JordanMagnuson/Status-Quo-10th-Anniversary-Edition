@@ -27,7 +27,6 @@
     {"id":{"name":"hit","path":"sounds/hit/hit.yy",},"order":1,},
     {"id":{"name":"sEnemyCollision","path":"sprites/sEnemyCollision/sEnemyCollision.yy",},"order":2,},
     {"id":{"name":"oGameOverController","path":"objects/oGameOverController/oGameOverController.yy",},"order":14,},
-    {"id":{"name":"oSoundController","path":"objects/oSoundController/oSoundController.yy",},"order":6,},
     {"id":{"name":"oChina","path":"objects/oChina/oChina.yy",},"order":12,},
     {"id":{"name":"sCh_Lasted","path":"sprites/sCh_Lasted/sCh_Lasted.yy",},"order":7,},
     {"id":{"name":"sPlayerCollision","path":"sprites/sPlayerCollision/sPlayerCollision.yy",},"order":1,},
