@@ -1,5 +1,5 @@
 radius = RADIUS_ORIG * breathValue;
-if (RESIST) {			
+if (RESIST && !frozen) {			
 	if (inDarkness()){
 		draw_set_color(c_white);
 		draw_sprite_ext(sArrow, image_index, x+1, y + 14,1,1,180,c_white,1);
