@@ -4,5 +4,6 @@ accelMovement();
 if (!global.debug) {
 	checkSafeZone();
 }
+checkCollisions();
 if (breathing)
 	breath();

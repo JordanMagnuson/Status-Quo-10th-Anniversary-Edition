@@ -19,11 +19,9 @@ function shootLazer(){
 	audio_play_sound(lazer,1,false);
 	shootingLazer = true;
 	alarm[0] = room_speed * LAZER_DURATION;
-	// Freeze everything
 	breathing = false;
 	oPlayer.breathing = false;
 	oLightTail.changeRotationSpeed(0);
-	//oEnemyController.enemyAlarm.active = false;
 }
 		
 function breath(){

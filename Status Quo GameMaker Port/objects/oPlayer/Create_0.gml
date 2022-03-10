@@ -52,7 +52,7 @@ function acceleration(){
 }
 		
 function gravityit(){
-	if ((abs(g)) < GRAV) // can fix using the macros isntead of number?
+	if ((abs(g)) < GRAV)
 	{
 		if (g < 0) 
 			g -= 0.1;
@@ -98,6 +98,12 @@ function checkSafeZone(){
 		}
 		canMove = false;
 	}	
+}
+		
+function checkCollisions(){
+	if rectangle_in_circle(oChina.x-10,oChina.y - 10,oChina.x+10,oChina.y+10,x,y,radius){
+		oMyWorldController.gameOver = true;
+	}
 }
 		
 function breath(){

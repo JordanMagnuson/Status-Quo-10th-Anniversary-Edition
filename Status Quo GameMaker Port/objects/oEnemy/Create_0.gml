@@ -26,6 +26,16 @@ function inDarkness(){
 	else
 		return false;
 }	
+
+function checkCollisions(){
+	if rectangle_in_circle(x-4,y-4,x+4,y+4,oPlayer.x,oPlayer.y,oPlayer.radius){
+		audio_play_sound(hit,1,false);
+		if (oPlayer.inDarkness())
+			oPlayer.y -= oPlayer.ENEMY_MOVE_DIST;
+		else
+			oPlayer.y += oPlayer.ENEMY_MOVE_DIST;		
+	}
+}
 		
 function destroy(){
 	instance_destroy();			
