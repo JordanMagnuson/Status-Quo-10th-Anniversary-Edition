@@ -1,4 +1,3 @@
-// Done with File
 package
 {
 	import net.flashpunk.Entity;

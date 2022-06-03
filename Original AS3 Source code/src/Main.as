@@ -9,15 +9,15 @@ package
 		public function Main() 
 		{
 			// Initiate the game with a 800x600 screen.
-			super(640, 580, 60, false); //Done
-			FP.screen.color = Colors.BLACK; //Done
+			super(640, 580, 60, false);
+			FP.screen.color = Colors.BLACK;
 			
 			// Debug console
 			//FP.console.enable();
 			//FP.screen.smoothing = false;
 			//FP.console.watch('col', 'row');			
 			
-			FP.world = new GameWorld; // Done
+			FP.world = new GameWorld;
 			Mouse.hide();
 		}
 	}

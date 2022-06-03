@@ -87,7 +87,7 @@ package
 		{
 			add(new FadeIn);
 		}
-		  
+		
 		override public function update():void
 		{
 			if (Input.released(Key.SPACE) || Input.mouseReleased)
